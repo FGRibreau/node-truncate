@@ -9,8 +9,8 @@
     var DEFAULT_TRUNCATE_SYMBOL = '...',
         URL_REGEX               = /(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)|((mailto:)?[_.\w-]+@([\w][\w\-]+\.)+[a-zA-Z]{2,3})/g; // Simple regexp
 
-    function __appendEllipsis(string, maxLength, options, content){
-        if(string.length <= maxLength || !options.ellipsis){return content;}
+    function __appendEllipsis(string, options, content){
+        if(content.length === string.length || !options.ellipsis){return content;}
         content += options.ellipsis;
         return content;
     }
@@ -26,9 +26,9 @@
      * @return {String} truncated string
      */
     function truncate(string, maxLength, options) {
-        var total   = 0,          // record how many characters we traced so far
-            content = '',         // truncated text storage
+        var content = '',         // truncated text storage
             matches = true,
+            remainingLength = maxLength,
             result,
             index;
 
@@ -39,23 +39,27 @@
             return '';
         }
 
-        URL_REGEX.lastIndex = 0;
-        matches = URL_REGEX.exec(string);
-
-        if(!matches || matches.index >= maxLength){
-            content += string.substring(0, maxLength - total);
-            return __appendEllipsis(string, maxLength, options, content);
-        }
-
+        matches = true;
         while(matches){
+            URL_REGEX.lastIndex = content.length;
+            matches = URL_REGEX.exec(string);
+
+            if(!matches || (matches.index - content.length) >= remainingLength){
+                content += string.substring(content.length, maxLength);
+                return __appendEllipsis(string, options, content, maxLength);
+            }
+
             result  = matches[0];
             index   = matches.index;
-            content += string.substring(0, (index + result.length) - total);
-            string  = string.substring(index + result.length);
-            matches = URL_REGEX.exec(string);
+            content += string.substring(content.length, index + result.length);
+            remainingLength -= index + result.length;
+
+            if(remainingLength <= 0){
+                break;
+            }
         }
 
-        return __appendEllipsis(string, maxLength, options, content);
+        return __appendEllipsis(string, options, content, maxLength);
     }
 
     if ('undefined' !== typeof module && module.exports) {
