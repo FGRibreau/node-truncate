@@ -35,8 +35,8 @@
         options          = options || {};
         options.ellipsis = (typeof options.ellipsis === "undefined") ? DEFAULT_TRUNCATE_SYMBOL : options.ellipsis;
 
-        if (total >= maxLength) {
-            return __appendEllipsis(string, maxLength, options, content);
+        if(!string || string.length === 0){
+            return '';
         }
 
         URL_REGEX.lastIndex = 0;

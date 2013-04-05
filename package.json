@@ -3,7 +3,7 @@
   "name": "truncate",
   "main": "truncate.js",
   "description": "Truncate text and keep urls safe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "git@github.com:FGRibreau/node-text-truncate.git"

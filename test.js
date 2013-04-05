@@ -5,6 +5,16 @@ describe('truncate', function() {
   it('should truncate text with given length', function() {
     var input, expect, actual;
 
+    input = null;
+    actual = truncate(input, 3);
+    expect = '';
+    assert.strictEqual(expect, actual);
+
+    input = '';
+    actual = truncate(input, 3);
+    expect = '';
+    assert.strictEqual(expect, actual);
+
     input = 'hello';
     actual = truncate(input, 3);
     expect = 'hel...';
