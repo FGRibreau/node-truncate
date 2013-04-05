@@ -1,0 +1,22 @@
+{
+  "author": "Francois-Guillaume Ribreau <npm@fgribreau.com> (http://fgribreau.com)",
+  "name": "truncate",
+  "main": "truncate.js",
+  "description": "Truncate text and keep urls safe",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:FGRibreau/node-text-truncate.git"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*",
+    "yuidocjs": "*"
+  }
+}
