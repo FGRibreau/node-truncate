@@ -1,7 +1,7 @@
 Truncate [![Build Status](https://drone.io/github.com/FGRibreau/node-truncate/status.png)](https://drone.io/github.com/FGRibreau/node-truncate/latest)
 ==================
 
-Truncate text and keep urls safe.
+Truncate text and keeps urls safe.
 
 ## NPM
 Install the module with: `npm install truncate`
