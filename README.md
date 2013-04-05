@@ -1,4 +1,4 @@
-Truncate
+Truncate [![Build Status](https://drone.io/github.com/FGRibreau/node-truncate/status.png)](https://drone.io/github.com/FGRibreau/node-truncate/latest)
 ==================
 
 Truncate text and keep urls safe.
@@ -7,11 +7,14 @@ Truncate text and keep urls safe.
 Install the module with: `npm install truncate`
 
 ## Usage
-```javascript
-# Browser
-String.truncate("1234 http://google.com hey :)", 2) === "12..."
 
-# NodeJS
+```javascript
+// Browser
+String.truncate("1234 http://google.com hey :)", 2) === "12..."
+```
+
+```javascript
+// NodeJS
 > truncate = require('truncate');
 > truncate("1234 http://google.com hey :)", 4);
 "1234..."
