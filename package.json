@@ -4,9 +4,10 @@
   "main": "truncate.js",
   "description": "Truncate text and keep urls safe",
   "version": "1.0.2",
+  "homepage": "https://github.com/FGRibreau/node-truncate",
   "repository": {
     "type": "git",
-    "url": "git@github.com:FGRibreau/node-text-truncate.git"
+    "url": "git@github.com:FGRibreau/node-truncate.git"
   },
   "scripts": {
     "test": "mocha --reporter spec"
@@ -14,6 +15,7 @@
   "engines": {
     "node": "*"
   },
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "mocha": "*",
