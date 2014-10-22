@@ -27,8 +27,9 @@ String.truncate("1234 http://google.com hey :)", 2) === "12..."
 ```
 
 ## Release History
-v1.0.0 - Initial commit (5 apr. 2012)
+v1.0.3 - Add repository homepage (22 Oct. 2014)
+v1.0.0 - Initial commit (5 Apr. 2012)
 
 ## License
-Copyright (c) 2013 Francois-Guillaume Ribreau
+Copyright (c) 2014 Francois-Guillaume Ribreau
 Licensed under the MIT license.
