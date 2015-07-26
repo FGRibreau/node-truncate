@@ -1,8 +1,8 @@
 # Change Log
 
-## [Unreleased](https://github.com/fgribreau/node-truncate/tree/HEAD)
+## [v1.0.5](https://github.com/fgribreau/node-truncate/tree/v1.0.5) (2015-07-26)
 
-[Full Changelog](https://github.com/fgribreau/node-truncate/compare/v1.0.4...HEAD)
+[Full Changelog](https://github.com/fgribreau/node-truncate/compare/v1.0.4...v1.0.5)
 
 **Merged pull requests:**
 
