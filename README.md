@@ -1,4 +1,4 @@
-Truncate [![Build Status](https://drone.io/github.com/FGRibreau/node-truncate/status.png)](https://drone.io/github.com/FGRibreau/node-truncate/latest) [![Downloads](http://img.shields.io/npm/dm/truncate.svg)](https://www.npmjs.com/package/truncate)
+Truncate [![Build Status](https://drone.io/github.com/FGRibreau/node-truncate/status.png?update)](https://drone.io/github.com/FGRibreau/node-truncate/latest) [![Downloads](http://img.shields.io/npm/dm/truncate.svg)](https://www.npmjs.com/package/truncate)
 ==================
 
 Truncate text and keeps urls safe.
