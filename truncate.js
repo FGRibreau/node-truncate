@@ -6,7 +6,7 @@
 (function (context, undefined) {
     'use strict';
 
-    var DEFAULT_TRUNCATE_SYMBOL = '...',
+    var DEFAULT_TRUNCATE_SYMBOL = '…',
         URL_REGEX = /(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)|((mailto:)?[_.\w-]+@([\w][\w\-]+\.)+[a-zA-Z]{2,3})/g; // Simple regexp
 
     function __appendEllipsis(string, options, content) {
