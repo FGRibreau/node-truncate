@@ -7,10 +7,12 @@
     'use strict';
 
     var DEFAULT_TRUNCATE_SYMBOL = '...',
-        URL_REGEX               = /(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)|((mailto:)?[_.\w-]+@([\w][\w\-]+\.)+[a-zA-Z]{2,3})/g; // Simple regexp
+        URL_REGEX = /(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)|((mailto:)?[_.\w-]+@([\w][\w\-]+\.)+[a-zA-Z]{2,3})/g; // Simple regexp
 
-    function __appendEllipsis(string, options, content){
-        if(content.length === string.length || !options.ellipsis){return content;}
+    function __appendEllipsis(string, options, content) {
+        if (content.length === string.length || !options.ellipsis) {
+            return content;
+        }
         content += options.ellipsis;
         return content;
     }
@@ -26,35 +28,35 @@
      * @return {String} truncated string
      */
     function truncate(string, maxLength, options) {
-        var content = '',         // truncated text storage
+        var content = '', // truncated text storage
             matches = true,
             remainingLength = maxLength,
             result,
             index;
 
-        options          = options || {};
+        options = options || {};
         options.ellipsis = (typeof options.ellipsis === "undefined") ? DEFAULT_TRUNCATE_SYMBOL : options.ellipsis;
 
-        if(!string || string.length === 0){
+        if (!string || string.length === 0) {
             return '';
         }
 
         matches = true;
-        while(matches){
+        while (matches) {
             URL_REGEX.lastIndex = content.length;
             matches = URL_REGEX.exec(string);
 
-            if(!matches || (matches.index - content.length) >= remainingLength){
+            if (!matches || (matches.index - content.length) >= remainingLength) {
                 content += string.substring(content.length, maxLength);
                 return __appendEllipsis(string, options, content, maxLength);
             }
 
-            result  = matches[0];
-            index   = matches.index;
+            result = matches[0];
+            index = matches.index;
             content += string.substring(content.length, index + result.length);
             remainingLength -= index + result.length;
 
-            if(remainingLength <= 0){
+            if (remainingLength <= 0) {
                 break;
             }
         }
