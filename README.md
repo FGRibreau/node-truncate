@@ -29,7 +29,8 @@ String.truncate("1234 http://google.com hey :)", 2) === "12..."
 ## [Changelog](/CHANGELOG.md)
 
 ## Donate
-[Donate Bitcoins](https://coinbase.com/checkouts/fc3041b9d8116e0b98e7d243c4727a30)
+
+I maintain this project in my free time, if it helped you please support my work via [paypal](https://paypal.me/fgribreau) or [bitcoins](https://www.coinbase.com/fgribreau), thanks a lot!
 
 ## License
 Copyright (c) 2014 Francois-Guillaume Ribreau
