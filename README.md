@@ -1,4 +1,4 @@
-Truncate [![Build Status](https://drone.io/github.com/FGRibreau/node-truncate/status.png?update)](https://drone.io/github.com/FGRibreau/node-truncate/latest) [![Downloads](http://img.shields.io/npm/dm/truncate.svg)](https://www.npmjs.com/package/truncate)
+Truncate [![Build Status](https://drone.io/github.com/FGRibreau/node-truncate/status.png?update)](https://drone.io/github.com/FGRibreau/node-truncate/latest) [![Downloads](http://img.shields.io/npm/dm/truncate.svg)](https://www.npmjs.com/package/truncate) [![available-for-advisory](https://img.shields.io/badge/available%20for%20advising-yes-ff69b4.svg?)](http://bit.ly/2c7uFJq) [![Twitter Follow](https://img.shields.io/twitter/follow/fgribreau.svg?style=flat)](https://twitter.com/FGRibreau)
 ==================
 
 Truncate text and keeps urls safe.
