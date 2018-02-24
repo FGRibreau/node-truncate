@@ -7,7 +7,9 @@
     'use strict';
 
     var DEFAULT_TRUNCATE_SYMBOL = '…',
-        URL_REGEX = /(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)|((mailto:)?[_.\w-]+@([\w][\w\-]+\.)+[a-zA-Z]{2,3})/g; // Simple regexp
+        // Limit emails to no more than about 600 chars, well over the max of ~300.
+        // cf. RFC: https://www.rfc-editor.org/errata_search.php?eid=1690
+        URL_REGEX = /(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)|((mailto:)?[_.\w-]{1,300}@(.{1,300}\.)[a-zA-Z]{2,3})/g;
 
     function __appendEllipsis(string, options, content) {
         if (content.length === string.length || !options.ellipsis) {
