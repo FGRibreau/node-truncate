@@ -73,3 +73,32 @@ exports['should keep url safe'] = function (t) {
 
   t.done();
 };
+
+exports['Not vulnerable to REDOS'] = function (t) {
+
+  var prefix, pump, suffix, nPumps, attackString; // for evil input
+  var input, actual, expect; // input to truncate()
+  var before, elapsed; // timing
+
+  /* URL_REGEX */
+  prefix = '-@w--w--';
+  pump = 'ww--';
+  suffix = '';
+  nPumps = 20000;
+
+  attackString = prefix;
+  for (var i = 0; i < nPumps; i++) {
+    attackString += pump;
+  }
+  attackString += suffix;
+
+  before = process.hrtime();
+  input = 'Hey ' + attackString;
+  actual = truncate(input, 4);
+  expect = 'Hey …';
+  t.strictEqual(expect, actual);
+  elapsed = process.hrtime(before);
+
+  t.equals(elapsed[0], 0); // Should take < 1 second
+  t.done();
+};
