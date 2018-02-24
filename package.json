@@ -19,6 +19,7 @@
   "dependencies": {},
   "devDependencies": {
     "nodeunit": "*",
+    "npm-release": "^1.0.0",
     "yuidocjs": "*"
   }
 }
