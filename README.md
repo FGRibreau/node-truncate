@@ -12,18 +12,18 @@ Install the module with: `npm install truncate`
 
 ```javascript
 // Browser
-String.truncate("1234 http://google.com hey :)", 2) === "12..."
+String.truncate("1234 http://google.com hey :)", 2) === "12…"
 ```
 
 ```javascript
 // NodeJS
 > truncate = require('truncate');
 > truncate("1234 http://google.com hey :)", 4);
-"1234..."
+"1234…"
 > truncate("1234 http://google.com hey :)", 4, {ellipsis:null}); // or ellipsis:''
 "1234"
 > truncate("1234 http://google.com hey :)", 6);
-"1234 http://google.com..."
+"1234 http://google.com…"
 > truncate("1234 http://google.com hey :)", 100);
 "1234 http://google.com hey :)"
 ```
