@@ -25,7 +25,6 @@
      * @param {String} string string needs to be truncated
      * @param {Number} maxLength length of truncated string
      * @param {Object} options (optional)
-     * @param {Boolean} [options.keepImageTag] flag to specify if keep image tag, false by default
      * @param {Boolean|String} [options.ellipsis] omission symbol for truncated string, '...' by default
      * @return {String} truncated string
      */
