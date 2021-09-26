@@ -46,8 +46,8 @@
         while (matches) {
             URL_REGEX.lastIndex = content.length;
             matches = URL_REGEX.exec(string);
-
-            if (!matches || (matches.index - content.length) >= remainingLength) {
+            // Don't try to retain URLs longer than 3k chars, well over the 99th percentile of ~347
+            if (!matches || (matches.index - content.length) >= remainingLength || URL_REGEX.lastIndex >= (maxLength + 3000)) {
                 content += string.substring(content.length, maxLength);
                 return __appendEllipsis(string, options, content, maxLength);
             }
