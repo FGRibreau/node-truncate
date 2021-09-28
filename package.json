@@ -4,7 +4,7 @@
   "main": "truncate.js",
   "types": "truncate.d.ts",
   "description": "Truncate text and keep urls safe",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "homepage": "https://github.com/FGRibreau/node-truncate",
   "repository": {
     "type": "git",
