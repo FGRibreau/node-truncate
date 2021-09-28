@@ -74,6 +74,37 @@ exports['should keep url safe'] = function (t) {
   t.done();
 };
 
+exports['should cut off huge URLs for safety'] = function (t) {
+  var input, expect, actual, longString;
+  longString = "a".repeat(301);
+  input = 'Hey mailto:' + longString + '@' + longString + '.com';
+  actual = truncate(input, 5);
+  expect = 'Hey m…';
+  t.strictEqual(expect, actual);
+
+  // Just above the limit, should get chopped
+  longString = "a".repeat(3000 - 'https://'.length + 1);
+  input = 'Hey https://' + longString;
+  actual = truncate(input, 5);
+  expect = 'Hey h…';
+  t.strictEqual(expect, actual);
+
+  // Right at the limit, should be retained
+  longString = "a".repeat(3000 - 'https://'.length);
+  input = 'Hey https://' + longString;
+  actual = truncate(input, 5);
+  expect = input;
+  t.strictEqual(expect, actual);
+
+  // Still retain the long URL even if there's text after the long URL
+  input = 'Hey https://' + longString + " other text";
+  actual = truncate(input, 5);
+  expect = expect + '…'
+  t.strictEqual(expect, actual);
+
+  t.done();
+}
+
 exports['Not vulnerable to REDOS'] = function (t) {
 
   var prefix, pump, suffix, nPumps, attackString; // for evil input
