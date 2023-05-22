@@ -8,6 +8,12 @@ Truncate text and keeps urls safe.
 ## NPM
 Install the module with: `npm install truncate`
 
+## ❤️ Shameless plug
+
+- [Open-Source self-hostable or fully-managed **webhook as a service**](https://www.hook0.com/)
+- [**Charts, simple as a URL**. No more server-side rendering pain, 1 url = 1 chart](https://image-charts.com)
+- [Looking for a managed Keycloak IAM ?](https://www.cloud-iam.com/)
+
 ## Usage
 
 ```javascript
